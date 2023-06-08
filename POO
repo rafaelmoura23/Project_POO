@@ -1,0 +1,8 @@
+programação orientada ao objeto
+objeto criado a partir de classes
+objeto é uma cópia de uma classe
+classe é um modelo a ser seguido
+objetos são criados a partir desses modelos
+
+abstract na classe não deixa criar um objeto
+metodo abstract na superclasse tem que obrigatoriamente declarar o metodo na classe herdeira, não pega automaticamente
