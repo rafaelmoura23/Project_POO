@@ -13,8 +13,10 @@ public class App {
         int contPf=0;
         int contPj=0;
 
+
         while(logado){
-            int acao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma ação:"
+            JOptionPane.showMessageDialog(null,"Seja Bem-Vindo(a) ao App do Banco!");
+            int acao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma Opção:"
                                                         +"\n 1-Criar Conta Física;"
                                                         +"\n 2-Criar Conta Jurídica;"
                                                         +"\n 3-Acessar Conta Física;"
@@ -28,7 +30,7 @@ public class App {
                 clientePf[contPf].setnCpf(JOptionPane.showInputDialog("Informe o CPF do Cliente"));
                 clientePf[contPf].setSaldo(0);
                 clientePf[contPf].setnConta(1000+contPf+1);
-                clientePf[contPf].setIdade(Integer.parseInt(JOptionPane.showInputDialog("Digite a Idade do Cliente")));
+                clientePf[contPf].setIdade(Integer.parseInt(JOptionPane.showInputDialog("Informe a Idade do Cliente")));
                 //acrescimo do contador
                 contPf++;
 
@@ -42,18 +44,27 @@ public class App {
 
             } else if(acao==3){//acessar a conta
                 //buscar a conta no vetor
-                int nContaBuscada = Integer.parseInt(JOptionPane.showInputDialog("Informe o nº da Conta a ser buscada:"));
+                int nContaBuscada = Integer.parseInt(JOptionPane.showInputDialog("Informe o Número da Conta a ser buscada:"));
                 int contaAtual = 0;
                 for (int i = 0; i < clientePf.length; i++) {
                     if(nContaBuscada==clientePf[i].getnConta()){
                         //encontrei a posição da conta no vetor
                         //preciso guardar o "i"
                         contaAtual = i;
+                        JOptionPane.showMessageDialog(null,"Cliente Encontrado com Sucesso!");
+                        JOptionPane.showMessageDialog(null,"Você será redirecionado a conta do cliente com número de conta "+nContaBuscada);
                         JOptionPane.showMessageDialog(null,"Cliente Encontrado");
+
+                        JOptionPane.showMessageDialog(null,"\n Nome do Cliente: "+clientePf[contaAtual].getNome()
+                                                                        + "\n Idade do Cliente: " +clientePf[contaAtual].getIdade()
+                                                                        + "\n CPF do Cliente: " +clientePf[contaAtual].getnCpf()
+                                                                        + "\n N da Conta do Cliente: " +clientePf[contaAtual].getnConta()
+                                                                        + "\n Saldo do Cliente: " +clientePf[contaAtual].getSaldo());
+
                         break;
                     }
                 }
-                //entrar na conta do cliente
+                //entrar na conta do cliente  //\n
                 boolean acessarPF = true;
                 while (acessarPF) {
                     int acao2 = Integer.parseInt(JOptionPane.showInputDialog(
@@ -87,7 +98,6 @@ public class App {
                         //encontrei a posição da conta no vetor
                         //preciso guardar o "i"
                         contaAtual = i;
-                        JOptionPane.showMessageDialog(null,"Cliente Encontrado");
                         break;
                     }
                 }
