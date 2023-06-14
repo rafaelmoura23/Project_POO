@@ -13,9 +13,9 @@ public class App {
         int contPf=0;
         int contPj=0;
 
-
+        JOptionPane.showMessageDialog(null,"Seja Bem-Vindo(a) ao App do Banco!");
         while(logado){
-            JOptionPane.showMessageDialog(null,"Seja Bem-Vindo(a) ao App do Banco!");
+            
             int acao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma Opção:"
                                                         +"\n 1-Criar Conta Física;"
                                                         +"\n 2-Criar Conta Jurídica;"
@@ -52,9 +52,6 @@ public class App {
                         //preciso guardar o "i"
                         contaAtual = i;
                         JOptionPane.showMessageDialog(null,"Cliente Encontrado com Sucesso!");
-                        JOptionPane.showMessageDialog(null,"Você será redirecionado a conta do cliente com número de conta "+nContaBuscada);
-                        JOptionPane.showMessageDialog(null,"Cliente Encontrado");
-
                         JOptionPane.showMessageDialog(null,"\n Nome do Cliente: "+clientePf[contaAtual].getNome()
                                                                         + "\n Idade do Cliente: " +clientePf[contaAtual].getIdade()
                                                                         + "\n CPF do Cliente: " +clientePf[contaAtual].getnCpf()
@@ -98,6 +95,11 @@ public class App {
                         //encontrei a posição da conta no vetor
                         //preciso guardar o "i"
                         contaAtual = i;
+                        JOptionPane.showMessageDialog(null,"Cliente Encontrado com Sucesso!");
+                        JOptionPane.showMessageDialog(null,"\n Nome do Cliente: "+clientePj[contaAtual].getNome()
+                                                                        + "\n CNPJ do Cliente: " +clientePj[contaAtual].getnCnpj()
+                                                                        + "\n N da Conta do Cliente: " +clientePj[contaAtual].getnConta()
+                                                                        + "\n Saldo do Cliente: " +clientePj[contaAtual].getSaldo());
                         break;
                     }
                 }
