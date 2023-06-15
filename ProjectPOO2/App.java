@@ -18,8 +18,7 @@ public class App {
             
             int acao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma Opção:"
                                                         +"\n 1-Criar Conta;"
-                                                        +"\n 2-Acessar Conta Física;"
-                                                        +"\n 3-Acessar Conta Jurídica"
+                                                        +"\n 2-Acessar Conta;"
                                                         +"\n 4-Sair."));
             if(acao==1){//criar a conta Pessoa física
                 int acaoDentro = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma opção:"
@@ -46,10 +45,17 @@ public class App {
                 } else {
                     JOptionPane.showMessageDialog(null,"Digite uma Opção Válida!");
                 }
+
             
-            } else if(acao==2){//acessar a conta
+            } else if(acao==2){//acessar a conta de pessoas Físicas
                 //buscar a conta no vetor
-                int nContaBuscada = Integer.parseInt(JOptionPane.showInputDialog("Informe o Número da Conta a ser buscada:"));
+
+                 int acaoAcessar = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma opção:"
+                +"\n 1-Acessar Conta Física"
+                +"\n 2-Acessar Conta Jurídica"));
+
+                if(acaoAcessar==1){
+                    int nContaBuscada = Integer.parseInt(JOptionPane.showInputDialog("Informe o Número da Conta a ser buscada:"));
                 int contaAtual = 0;
                 for (int i = 0; i < clientePf.length; i++) {
                     if(nContaBuscada==clientePf[i].getnConta()){
@@ -90,9 +96,8 @@ public class App {
                             clientePf[contaAtual].Emprestimo();
                         }
                 }
- 
-            } else if(acao==3){
-                 //buscar a conta no vetor
+                } else if(acaoAcessar==2){
+                    //buscar a conta no vetor
                 int nContaBuscada = Integer.parseInt(JOptionPane.showInputDialog("Informe o nº da Conta a ser buscada:"));
                 int contaAtual = 0;
                 for (int i = 0; i < clientePj.length; i++) {
@@ -132,7 +137,10 @@ public class App {
                             clientePj[contaAtual].Emprestimo();
                         }
                 }
-            }else if(acao==4){
+        
+                }
+                
+            }else if(acao==3){
                 logado = false;
                 JOptionPane.showMessageDialog(null,"Volte Sempre!");
             } else{
