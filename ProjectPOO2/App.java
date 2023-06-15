@@ -63,7 +63,6 @@ public class App {
                         contaAtual = i;
                         JOptionPane.showMessageDialog(null,"Cliente Encontrado com Sucesso!");
                         JOptionPane.showMessageDialog(null,"\n Nome do Cliente: "+clientePf[contaAtual].getNome()
-                                                                        + "\n Idade do Cliente: " +clientePf[contaAtual].getIdade()
                                                                         + "\n CPF do Cliente: " +clientePf[contaAtual].getnCpf()
                                                                         + "\n N da Conta do Cliente: " +clientePf[contaAtual].getnConta()
                                                                         + "\n Saldo do Cliente: " +clientePf[contaAtual].getSaldo());
