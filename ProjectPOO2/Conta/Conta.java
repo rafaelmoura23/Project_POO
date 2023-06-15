@@ -31,7 +31,7 @@ public abstract class Conta {
     //outros metodos
     public void Saque() {
         int valor = Integer.parseInt(JOptionPane.showInputDialog("Quanto Deseja Sacar?"));
-        if(saldo>valor){
+        if(saldo>=valor){
             JOptionPane.showMessageDialog(null,"Você sacou " +valor+ " Reais.");
             saldo-=valor;
         } else{

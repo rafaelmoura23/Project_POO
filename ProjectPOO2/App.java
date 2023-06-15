@@ -17,13 +17,16 @@ public class App {
         while(logado){
             
             int acao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma Opção:"
-                                                        +"\n 1-Criar Conta Física;"
-                                                        +"\n 2-Criar Conta Jurídica;"
-                                                        +"\n 3-Acessar Conta Física;"
-                                                        +"\n 4-Acessar Conta Jurídica"
-                                                        +"\n 5-Sair."));
+                                                        +"\n 1-Criar Conta;"
+                                                        +"\n 2-Acessar Conta Física;"
+                                                        +"\n 3-Acessar Conta Jurídica"
+                                                        +"\n 4-Sair."));
             if(acao==1){//criar a conta Pessoa física
-                //criar um objeto (construtor)
+                int acaoDentro = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma opção:"
+                +"\n 1-Criar Conta Física"
+                +"\n 2-Criar Conta Jurídica"));
+                if(acaoDentro==1){
+                                    //criar um objeto (construtor)
                 clientePf[contPf] = new ContaPF();//obj/conta esta criado
                 //preencher as informações da conta
                 clientePf[contPf].setNome(JOptionPane.showInputDialog("Digite o Nome do Cliente"));
@@ -33,16 +36,18 @@ public class App {
                 clientePf[contPf].setIdade(Integer.parseInt(JOptionPane.showInputDialog("Informe a Idade do Cliente")));
                 //acrescimo do contador
                 contPf++;
-
-            }else if(acao==2){ //criar conta Pessoa Juridica
+                } else if(acaoDentro==2){
                 clientePj[contPj] = new ContaPJ(); 
                 clientePj[contPj].setNome(JOptionPane.showInputDialog("Digite o Nome do Cliente"));
                 clientePj[contPj].setnCnpj(JOptionPane.showInputDialog("Informe o CNPJ do Cliente"));
                 clientePj[contPj].setSaldo(0);
                 clientePj[contPj].setnConta(5000+contPj+1);
                 contPj++;
-
-            } else if(acao==3){//acessar a conta
+                } else {
+                    JOptionPane.showMessageDialog(null,"Digite uma Opção Válida!");
+                }
+            
+            } else if(acao==2){//acessar a conta
                 //buscar a conta no vetor
                 int nContaBuscada = Integer.parseInt(JOptionPane.showInputDialog("Informe o Número da Conta a ser buscada:"));
                 int contaAtual = 0;
@@ -61,7 +66,7 @@ public class App {
                         break;
                     }
                 }
-                //entrar na conta do cliente  //\n
+                //entrar na conta do cliente  //
                 boolean acessarPF = true;
                 while (acessarPF) {
                     int acao2 = Integer.parseInt(JOptionPane.showInputDialog(
@@ -86,7 +91,7 @@ public class App {
                         }
                 }
  
-            } else if(acao==4){
+            } else if(acao==3){
                  //buscar a conta no vetor
                 int nContaBuscada = Integer.parseInt(JOptionPane.showInputDialog("Informe o nº da Conta a ser buscada:"));
                 int contaAtual = 0;
@@ -127,7 +132,7 @@ public class App {
                             clientePj[contaAtual].Emprestimo();
                         }
                 }
-            }else if(acao==5){
+            }else if(acao==4){
                 logado = false;
                 JOptionPane.showMessageDialog(null,"Volte Sempre!");
             } else{
