@@ -13,13 +13,12 @@ public class App {
         int contPf=0;
         int contPj=0;
 
-        JOptionPane.showMessageDialog(null,"Seja Bem-Vindo(a) ao App do Banco!");
         while(logado){
             
             int acao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma Opção:"
                                                         +"\n 1-Criar Conta;"
                                                         +"\n 2-Acessar Conta;"
-                                                        +"\n 4-Sair."));
+                                                        +"\n 3-Sair."));
             if(acao==1){//criar a conta Pessoa física
                 int acaoDentro = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma opção:"
                 +"\n 1-Criar Conta Física"
@@ -92,6 +91,8 @@ public class App {
                         } else if(acao2==4){
                             //emprestimo
                             clientePf[contaAtual].Emprestimo();
+                        } else{
+                             JOptionPane.showMessageDialog(null,"Informe uma Opção Válida!");
                         }
                 }
                 } else if(acaoAcessar==2){
@@ -133,9 +134,13 @@ public class App {
                         } else if(acao2==4){
                             //emprestimo
                             clientePj[contaAtual].Emprestimo();
+                        }else{
+                             JOptionPane.showMessageDialog(null,"Informe uma Opção Válida!");
                         }
                 }
         
+                } else{
+                     JOptionPane.showMessageDialog(null,"Informe uma Opção Válida!");
                 }
                 
             }else if(acao==3){
