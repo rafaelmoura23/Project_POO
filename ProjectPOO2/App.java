@@ -88,8 +88,9 @@ public class App {
                                 } else {
                                     JOptionPane.showMessageDialog(null, "Informe uma Opção Válida!");
                                 }
-                                break;
+                                
                             }
+                            break;
                             
                         }
                     }
@@ -134,8 +135,8 @@ public class App {
                                 } else {
                                     JOptionPane.showMessageDialog(null, "Informe uma Opção Válida!");
                                 }
-                                break;
                             }
+                            break;
                         }
                     }
                 }

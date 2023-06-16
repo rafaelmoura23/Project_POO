@@ -35,7 +35,9 @@ public abstract class Conta {
             JOptionPane.showMessageDialog(null,"Você sacou " +valor+ " Reais.");
             saldo-=valor;
         } else{
-            JOptionPane.showMessageDialog(null,"Saldo Insuficiente.");
+            JOptionPane.showMessageDialog(null,"Saldo Insuficiente."
+                                        +"\n Para Sacar essa Quantia a Conta deve ter Mais "
+                                        + (valor-saldo) +" Reais");
         }
     }
 
@@ -50,18 +52,15 @@ public abstract class Conta {
     }
 
     public void Emprestimo() {
-        JOptionPane.showMessageDialog(null,"Por Conta das Diretrizes do Banco o Valor Máximo a ser Emprestado é R$10.000.");
         int valor = Integer.parseInt(JOptionPane.showInputDialog("Quanto deseja pegar emprestado?"));
-        if(valor<=10000){
+        if(valor<=10000 && valor>=1){
             JOptionPane.showMessageDialog(null,"Você Emprestou " +valor+ " Reais.");
-            saldo+=valor;;
+            saldo+=valor;
         } else if(valor<=0){
-            JOptionPane.showMessageDialog(null,"O valor é Nulo");
-        } else {
-            JOptionPane.showMessageDialog(null,"Você extrapolou o valor máximo de empréstimo.");
-        }
+            JOptionPane.showMessageDialog(null,"O valor é Nulo ou Negativo");
+        } else{ 
+           JOptionPane.showMessageDialog(null,"Por Conta das Diretrizes do Banco o Valor Máximo a ser Emprestado é R$10.000.");
+        } 
     }
-
-
 }
 
