@@ -75,25 +75,25 @@ public class App {
                                                 + "\n 3-Deposito"
                                                 + "\n 4-Empréstimo"));
                                 if (acao2 == 1) {
-                                    JOptionPane.showMessageDialog(
-                                            null, clientePf[contaAtual].getSaldo());
+                                    JOptionPane.showMessageDialog(null, clientePf[contaAtual].getSaldo());
                                 } else if (acao2 == 2) {
                                     // sacar
                                     clientePf[contaAtual].Saque();
                                 } else if (acao2 == 3) {
                                     // depositar
                                     clientePf[contaAtual].Deposito();
-
                                 } else if (acao2 == 4) {
                                     // emprestimo
                                     clientePf[contaAtual].Emprestimo();
                                 } else {
                                     JOptionPane.showMessageDialog(null, "Informe uma Opção Válida!");
                                 }
+                                break;
                             }
-                            break;
+                            
                         }
                     }
+                    
 
                 } else if (acaoAcessar == 2) {
                     int nContaBuscada = Integer.parseInt(JOptionPane.showInputDialog("Informe o nº da Conta a ser buscada:"));
@@ -134,10 +134,9 @@ public class App {
                                 } else {
                                     JOptionPane.showMessageDialog(null, "Informe uma Opção Válida!");
                                 }
+                                break;
                             }
                         }
-
-                        break;
                     }
                 }
                 // entrar na conta do cliente
@@ -151,3 +150,4 @@ public class App {
 
     }
 }
+
