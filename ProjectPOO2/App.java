@@ -44,6 +44,7 @@ public class App {
                 } else {
                     JOptionPane.showMessageDialog(null, "Digite uma Opção Válida!");
                 }
+
                 
             } else if (acao == 2) {// acessar a conta de pessoas Físicas
                 // buscar a conta no vetor
@@ -51,7 +52,6 @@ public class App {
                 int acaoAcessar = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma opção:"
                         + "\n 1-Acessar Conta Física"
                         + "\n 2-Acessar Conta Jurídica"));
-
 
                 if (acaoAcessar == 1) {
                     int nContaBuscada = Integer.parseInt(JOptionPane.showInputDialog("Informe o Número da Conta a ser buscada:"));
@@ -65,42 +65,38 @@ public class App {
                                     + "\n N da Conta do Cliente: " + clientePf[contaAtual].getnConta()
                                     + "\n Saldo do Cliente: " + clientePf[contaAtual].getSaldo());
 
-                                    // entrar na conta do cliente 
-                    boolean acessarPF = true;
-                    while (acessarPF) {
-                        int acao2 = Integer.parseInt(JOptionPane.showInputDialog(
-                                "Informe a ação desejada"
-                                        + "\n 1-Verificar saldo"
-                                        + "\n 2-Saque"
-                                        + "\n 3-Deposito"
-                                        + "\n 4-Empréstimo"));
-                        if (acao2 == 1) {
-                            JOptionPane.showMessageDialog(
-                                    null, clientePf[contaAtual].getSaldo());
-                        } else if (acao2 == 2) {
-                            // sacar
-                            clientePf[contaAtual].Saque();
-                        } else if (acao2 == 3) {
-                            // depositar
-                            clientePf[contaAtual].Deposito();
+                            // entrar na conta do cliente
+                            boolean acessarPF = true;
+                            while (acessarPF) {
+                                int acao2 = Integer.parseInt(JOptionPane.showInputDialog(
+                                        "Informe a ação desejada"
+                                                + "\n 1-Verificar saldo"
+                                                + "\n 2-Saque"
+                                                + "\n 3-Deposito"
+                                                + "\n 4-Empréstimo"));
+                                if (acao2 == 1) {
+                                    JOptionPane.showMessageDialog(
+                                            null, clientePf[contaAtual].getSaldo());
+                                } else if (acao2 == 2) {
+                                    // sacar
+                                    clientePf[contaAtual].Saque();
+                                } else if (acao2 == 3) {
+                                    // depositar
+                                    clientePf[contaAtual].Deposito();
 
-                        } else if (acao2 == 4) {
-                            // emprestimo
-                            clientePf[contaAtual].Emprestimo();
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Informe uma Opção Válida!");
-                        }
-                    }
-
+                                } else if (acao2 == 4) {
+                                    // emprestimo
+                                    clientePf[contaAtual].Emprestimo();
+                                } else {
+                                    JOptionPane.showMessageDialog(null, "Informe uma Opção Válida!");
+                                }
+                            }
                             break;
                         }
                     }
 
                 } else if (acaoAcessar == 2) {
-
-                    int nContaBuscada = Integer
-                            .parseInt(JOptionPane.showInputDialog("Informe o nº da Conta a ser buscada:"));
-
+                    int nContaBuscada = Integer.parseInt(JOptionPane.showInputDialog("Informe o nº da Conta a ser buscada:"));
                     int contaAtual = 0;
                     for (int i = 0; i < contPj; i++) {
                         if (nContaBuscada == clientePj[i].getnConta()) {
@@ -113,40 +109,38 @@ public class App {
                                     + "\n N da Conta do Cliente: " + clientePj[contaAtual].getnConta()
                                     + "\n Saldo do Cliente: " + clientePj[contaAtual].getSaldo());
 
-                                    //entrar na conta do cliente
+                            // entrar na conta do cliente
 
-                                    boolean acessarPJ = true;
-                    while (acessarPJ) {
-                        int acao2 = Integer.parseInt(JOptionPane.showInputDialog(
-                                "Informe a ação desejada"
-                                        + "\n 1-Verificar saldo"
-                                        + "\n 2-Saque"
-                                        + "\n 3-Deposito"
-                                        + "\n 4-Empréstimo"));
-                        if (acao2 == 1) {
-                            JOptionPane.showMessageDialog(null, clientePj[contaAtual].getSaldo());
-                        } else if (acao2 == 2) {
-                            // sacar
-                            clientePj[contaAtual].Saque();
-                        } else if (acao2 == 3) {
-                            // depositar
-                            clientePj[contaAtual].Deposito();
+                            boolean acessarPJ = true;
+                            while (acessarPJ) {
+                                int acao2 = Integer.parseInt(JOptionPane.showInputDialog(
+                                        "Informe a ação desejada"
+                                                + "\n 1-Verificar saldo"
+                                                + "\n 2-Saque"
+                                                + "\n 3-Deposito"
+                                                + "\n 4-Empréstimo"));
+                                if (acao2 == 1) {
+                                    JOptionPane.showMessageDialog(null, clientePj[contaAtual].getSaldo());
+                                } else if (acao2 == 2) {
+                                    // sacar
+                                    clientePj[contaAtual].Saque();
+                                } else if (acao2 == 3) {
+                                    // depositar
+                                    clientePj[contaAtual].Deposito();
 
-                        } else if (acao2 == 4) {
-                            // emprestimo
-                            clientePj[contaAtual].Emprestimo();
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Informe uma Opção Válida!");
+                                } else if (acao2 == 4) {
+                                    // emprestimo
+                                    clientePj[contaAtual].Emprestimo();
+                                } else {
+                                    JOptionPane.showMessageDialog(null, "Informe uma Opção Válida!");
+                                }
+                            }
                         }
+
+                        break;
                     }
-                }             
-                            break;
-                        } 
-                    }
-                    // entrar na conta do cliente
-                     else {
-                    JOptionPane.showMessageDialog(null, "Informe uma Opção Válida!");
                 }
+                // entrar na conta do cliente
             } else if (acao == 3) {
                 logado = false;
                 JOptionPane.showMessageDialog(null, "Volte Sempre!");
